@@ -1,0 +1,29 @@
+{
+  "name": "node_blog",
+  "version": "0.0.1",
+  "description": "A blog built with Node/Express/Mongo.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonzielen/node-blog.git"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "mongo",
+    "fun"
+  ],
+  "author": "Jon Z.",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jonzielen/node-blog/issues"
+  },
+  "homepage": "https://github.com/jonzielen/node-blog#readme",
+  "dependencies": {
+    "express": "^4.12.4",
+    "express-generator": "^4.12.4"
+  }
+}
