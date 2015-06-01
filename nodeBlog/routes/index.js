@@ -11,9 +11,20 @@ router.get('/', function(req, res, next) {
   });
 });
 
-/* GET Blog Page */
+/* GET Blog Landing Page */
 router.get('/blog', function(req, res, next) {
-  res.render('blog', { title: 'Blog | '+siteTitle });
+  res.render('blog', {
+    title: 'Blog | '+siteTitle
+  });
 });
+
+/* GET Blog Posts */
+router.get('/blog/:id', function(req, res, next) {
+  res.render('blogPost', {
+    title: 'Blog | '+siteTitle,
+    urlSearch: req.params.id
+  });
+});
+
 
 module.exports = router;
