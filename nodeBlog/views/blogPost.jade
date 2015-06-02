@@ -2,3 +2,8 @@ extends layout
 
 block content
   h1= urlSearch
+  pre= data
+
+  ul
+  each val in data
+    li= val

@@ -1,5 +1,7 @@
 var express = require('express');
 var router = express.Router();
+var mongo = require('mongoskin');
+var db = mongo.db("mongodb://jonzielen:meow@ds041032.mongolab.com:41032/testdb", {native_parser:true});
 
 var siteTitle = 'Welcome to my FIRST Node/Express/Mongo blog!';
 
@@ -20,9 +22,18 @@ router.get('/blog', function(req, res, next) {
 
 /* GET Blog Posts */
 router.get('/blog/:id', function(req, res, next) {
+
+
+var blogPosts = db.collection('blogPosts').find({}, function(err, result) {
+    result.each(function(err, blogPosts) {
+        return blogPosts;
+    });
+});
+
   res.render('blogPost', {
     title: 'Blog | '+siteTitle,
-    urlSearch: req.params.id
+    urlSearch: req.params.id,
+    data: blogPosts
   });
 });
 
